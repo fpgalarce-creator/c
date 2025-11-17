@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Administración – Campo Santa Catalina</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"></span>
+        <span class="brand-text">Campo Santa Catalina</span>
+      </a>
+      <nav class="nav"><a href="index.html#catalogo">Ver tienda</a></nav>
+      <div class="header-cta">
+        <a id="accountLink" class="btn btn-outline" href="login.html">Mi cuenta</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h1>Panel de administración</h1>
+      <p class="muted">Solo para cuentas con rol <strong>admin</strong>.</p>
+
+      <section class="card">
+        <h2>Crear / editar producto</h2>
+        <form id="productForm" class="form grid-2">
+          <input type="hidden" id="prodId">
+          <label>Categoría
+            <select id="prodCat" required>
+              <option value="huevos">Huevos</option>
+              <option value="quesos">Quesos</option>
+              <option value="frutos">Frutos secos</option>
+              <option value="otros">Otros</option>
+            </select>
+          </label>
+          <label>Nombre
+            <input id="prodName" type="text" required placeholder="Ej: Huevos de campo docena">
+          </label>
+          <label>Precio (CLP)
+            <input id="prodPrice" type="number" min="0" step="1" required>
+          </label>
+          <label>Peso / Presentación
+            <input id="prodWeight" type="text" placeholder="Ej: docena, 500g, 1kg">
+          </label>
+          <label>Stock
+            <input id="prodStock" type="number" min="0" step="1" required>
+          </label>
+          <label>Imagen (URL opcional)
+            <input id="prodImg" type="url" placeholder="https://...">
+          </label>
+          <label>Activo
+            <select id="prodActive">
+              <option value="true">Sí</option>
+              <option value="false">No</option>
+            </select>
+          </label>
+
+          <div class="form-actions">
+            <button class="btn" type="submit" id="btnSave">Guardar</button>
+            <button class="btn btn-ghost" type="button" id="btnReset">Limpiar</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Productos por categoría</h2>
+        <div class="tabs">
+          <button class="tab active" data-tab="huevos">Huevos</button>
+          <button class="tab" data-tab="quesos">Quesos</button>
+          <button class="tab" data-tab="frutos">Frutos secos</button>
+          <button class="tab" data-tab="otros">Otros</button>
+        </div>
+        <div id="adminLists">
+          <div id="adm-huevos" class="adm-list"></div>
+          <div id="adm-quesos" class="adm-list hidden"></div>
+          <div id="adm-frutos" class="adm-list hidden"></div>
+          <div id="adm-otros" class="adm-list hidden"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© <span id="y"></span> Campo Santa Catalina</small>
+    </div>
+  </footer>
+
+  <script src="auth.js" defer></script>
+  <script src="admin.js" defer></script>
+</body>
+</html>
