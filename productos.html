@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Huevos - Alma de Granja</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Huevos de campo frescos de Alma de Granja.">
+</head>
+<body>
+  <!-- Header reutilizado -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html#inicio">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">Alma de Granja</span>
+        <small class="brand-slogan">Del campo a tu mesa</small>
+      </a>
+
+      <nav class="nav" aria-label="Principal">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#como-funciona">¿Cómo funciona?</a>
+        <div class="nav-dropdown">
+          <button class="nav-link nav-dropdown-toggle" type="button">
+            Categorías
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="huevos.html">Huevos</a>
+            <a href="quesos.html">Quesos</a>
+            <a href="frutos-secos.html">Frutos secos</a>
+            <a href="otros.html">Otros</a>
+            <a href="productos.html">Todos</a>
+          </div>
+        </div>
+        <a href="productos.html">Productos</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+
+      <div class="header-cta">
+        <button class="cart-btn" id="cartToggle" aria-label="Abrir carrito" title="Carrito">
+          🛒 <span id="cartCount" class="badge">0</span>
+        </button>
+        <a id="accountLink" class="btn btn-outline btn-account" href="login.html">Iniciar sesión</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section" data-category-page="huevos">
+    <div class="container">
+      <h1 class="section-title">Conoce Todos Nuestros Productos</h1>
+      <p class="section-intro">
+        Elige el formato que más te acomode.
+      </p>
+
+      <!-- Aquí se cargan TODOS los huevos vía JS -->
+      <div id="categoryProducts" class="grid cards products-grid"></div>
+    </div>
+  </main>
+
+  <!-- Footer reutilizado -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© <span id="y"></span> Alma de Granja. Todos los derechos reservados.</small>
+      <nav class="foot-nav">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="index.html#contacto">Contacto</a>
+        <a href="admin.html">Admin</a>
+        <a href="#" target="_blank">Instagram</a>
+        <a href="#" target="_blank">Facebook</a>
+      </nav>
+      <small class="dev-note">Sitio desarrollado por LoopDigital</small>
+    </div>
+  </footer>
+
+  <!-- Carrito, igual que en index -->
+  <aside id="cartDrawer" class="drawer" aria-hidden="true" aria-labelledby="cartTitle" role="dialog">
+    <div class="drawer-panel">
+      <div class="drawer-head">
+        <h2 id="cartTitle">Tu carrito</h2>
+        <button id="cartClose" class="icon-btn" aria-label="Cerrar">✖</button>
+      </div>
+      <div id="cartItems" class="drawer-body"></div>
+      <div class="drawer-foot">
+        <div class="totals">
+          <span>Total:</span>
+          <strong id="cartTotal">$0</strong>
+        </div>
+        <div class="checkout-fields">
+          <label>Nombre<input id="coName" type="text" placeholder="Tu nombre"></label>
+          <label>Teléfono<input id="coPhone" type="tel" placeholder="+56 9 ..."></label>
+          <label>Dirección<input id="coAddr" type="text" placeholder="Dirección / comuna"></label>
+        </div>
+        <p class="checkout-note">Podrás pagar vía transferencia o efectivo al recibir tu pedido.</p>
+        <button id="btnCheckout" class="btn">Confirmar pedido por WhatsApp</button>
+        <button id="btnClearCart" class="btn btn-ghost">Vaciar carrito</button>
+      </div>
+    </div>
+    <div class="drawer-backdrop" id="cartBackdrop" tabindex="-1" aria-hidden="true"></div>
+  </aside>
+
+  <script src="auth.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

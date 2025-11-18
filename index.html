@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Campo Santa Catalina</title>
+  <title>Alma de Granja</title>
   <link rel="stylesheet" href="styles.css" />
   <meta name="description" content="Productos de campo: huevos, quesos, frutos secos y más. Compra por WhatsApp.">
 </head>
@@ -13,13 +13,27 @@
     <div class="container header-inner">
       <a class="brand" href="#inicio">
         <span class="brand-mark" aria-hidden="true"></span>
-        <span class="brand-text">Campo Santa Catalina</span>
+        <span class="brand-text">Alma de Granja</span>
+        <small class="brand-slogan">Del campo a tu mesa</small>
       </a>
 
       <nav class="nav" aria-label="Principal">
         <a href="#inicio">Inicio</a>
         <a href="#como-funciona">¿Cómo funciona?</a>
-        <a href="#categorias">Categorías</a>
+
+        <!-- Dropdown de categorías -->
+        <div class="nav-dropdown">
+          <button class="nav-link nav-dropdown-toggle" type="button">
+            Categorías
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="huevos.html">Huevos</a>
+            <a href="quesos.html">Quesos</a>
+            <a href="frutos-secos.html">Frutos secos</a>
+            <a href="productos.html">Todos</a>
+          </div>
+        </div>
+
         <a href="#catalogo">Productos</a>
         <a href="#contacto">Contacto</a>
       </nav>
@@ -38,16 +52,20 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <p class="kicker">Productos de campo en tu mesa</p>
-          <h1>Crea, conecta y transforma <br> tu despensa con sabor a campo.</h1>
+          <p class="kicker">Productos frescos del campo</p>
+          <h1>Productos de campo directo a tu mesa.</h1>
           <p class="lead">
             Huevos de gallinas felices, quesos artesanales, frutos secos seleccionados y más.
-            Armá tu pedido y <strong>finaliza por WhatsApp</strong> para coordinar entrega.
+            Haz tu pedido y <strong>finaliza por WhatsApp</strong> para coordinar entrega.
           </p>
           <div class="hero-actions">
-            <a class="btn" href="#catalogo">Ver catálogo</a>
+            <a class="btn" href="#catalogo">Ver productos destacados</a>
             <a class="btn btn-ghost" href="#como-funciona">¿Cómo funciona?</a>
           </div>
+          <p class="trust-text">
+            ✓ Entregas coordinadas por WhatsApp en Rancagua y alrededores.<br>
+            ✓ Productos seleccionados directamente desde el campo.
+          </p>
         </div>
         <div class="hero-art" aria-hidden="true">
           <div class="hero-img"></div>
@@ -78,63 +96,54 @@
             <h3>Recibir y disfrutar</h3>
             <p>Coordinamos el horario y lugar de entrega para que disfrutes productos de campo frescos.</p>
           </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <h3>Pagar</h3>
+            <p>Puedes pagar mediante transferencia o en efectivo al recibir el pedido.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Categorías -->
-    <section id="categorias" class="section">
+    <!-- Categorías (solo atajos, sin listas de productos) -->
+    <section class="section">
       <div class="container">
         <h2 class="section-title">Categorías</h2>
         <div class="grid cards">
-          <a class="card card-cat" href="#cat-huevos" data-cat="huevos">
+          <a class="card card-cat" href="huevos.html">
             <div class="icon">🥚</div>
             <h3>Huevos</h3>
             <p>Campo, frescos, de gallinas felices.</p>
-            <ul class="cat-menu"></ul>
           </a>
-          <a class="card card-cat" href="#cat-quesos" data-cat="quesos">
+          <a class="card card-cat" href="quesos.html">
             <div class="icon">🧀</div>
             <h3>Quesos</h3>
             <p>Artesanales, varios formatos y maduraciones.</p>
-            <ul class="cat-menu"></ul>
           </a>
-          <a class="card card-cat" href="#cat-frutos" data-cat="frutos">
+          <a class="card card-cat" href="frutos-secos.html">
             <div class="icon">🥜</div>
             <h3>Frutos secos</h3>
             <p>Nueces, almendras, mix premium.</p>
-            <ul class="cat-menu"></ul>
           </a>
-          <a class="card card-cat" href="#cat-otros" data-cat="otros">
+          <a class="card card-cat" href="productos.html">
             <div class="icon">🌿</div>
-            <h3>Otros</h3>
+            <h3>Conoce Todos Nuestros Productos</h3>
             <p>Aceite de oliva, miel y delicias.</p>
-            <ul class="cat-menu"></ul>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Productos (antes Catálogo) -->
+    <!-- Productos populares -->
     <section id="catalogo" class="section">
       <div class="container">
         <h2 class="section-title">Productos populares</h2>
+        <p class="section-intro">
+          Estos son algunos de nuestros productos más pedidos. Los precios pueden variar según stock y temporada.
+        </p>
 
-        <div id="cat-huevos" class="category-anchor"></div>
-        <h3 class="category-title">Huevos</h3>
-        <div id="list-huevos" class="grid cards products-grid"></div>
-
-        <div id="cat-quesos" class="category-anchor"></div>
-        <h3 class="category-title">Quesos</h3>
-        <div id="list-quesos" class="grid cards products-grid"></div>
-
-        <div id="cat-frutos" class="category-anchor"></div>
-        <h3 class="category-title">Frutos secos</h3>
-        <div id="list-frutos" class="grid cards products-grid"></div>
-
-        <div id="cat-otros" class="category-anchor"></div>
-        <h3 class="category-title">Otros</h3>
-        <div id="list-otros" class="grid cards products-grid"></div>
+        <!-- Aquí solo van productos destacados -->
+        <div id="featuredProducts" class="grid cards products-grid"></div>
       </div>
     </section>
 
@@ -160,7 +169,15 @@
         <div class="card">
           <h3>¿Prefieres hablar ahora?</h3>
           <p>Escríbenos por WhatsApp y te ayudamos a armar tu pedido.</p>
-          <a id="contactWhats" class="btn btn-outline" href="#" rel="noopener">Abrir WhatsApp</a>
+          <a 
+            id="contactWhats" 
+            class="btn btn-outline" 
+            href="https://wa.me/56958086762?text=Hola%2C%20quiero%20hacer%20un%20pedido%20de%20productos%20del%20campo."
+            target="_blank"
+            rel="noopener"
+          >
+            Abrir WhatsApp
+          </a>
           <hr>
           <h4>Ubicación</h4>
           <p>VI Región, Chile. Entregas coordinadas por WhatsApp en sectores de Rancagua y alrededores.</p>
@@ -172,12 +189,15 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <small>© <span id="y"></span> Campo Santa Catalina. Todos los derechos reservados.</small>
+      <small>© <span id="y"></span> Alma de Granja. Todos los derechos reservados.</small>
       <nav class="foot-nav">
         <a href="#inicio">Inicio</a>
         <a href="#contacto">Contacto</a>
         <a href="admin.html">Admin</a>
+        <a href="#" target="_blank">Instagram</a>
+        <a href="#" target="_blank">Facebook</a>
       </nav>
+      <small class="dev-note">Sitio desarrollado por LoopDigital</small>
     </div>
   </footer>
 
@@ -199,7 +219,8 @@
           <label>Teléfono<input id="coPhone" type="tel" placeholder="+56 9 ..."></label>
           <label>Dirección<input id="coAddr" type="text" placeholder="Dirección / comuna"></label>
         </div>
-        <button id="btnCheckout" class="btn">Enviar pedido por WhatsApp</button>
+        <p class="checkout-note">Podrás pagar vía transferencia o efectivo al recibir tu pedido.</p>
+        <button id="btnCheckout" class="btn">Confirmar pedido por WhatsApp</button>
         <button id="btnClearCart" class="btn btn-ghost">Vaciar carrito</button>
       </div>
     </div>
@@ -210,4 +231,3 @@
   <script src="app.js" defer></script>
 </body>
 </html>
-
